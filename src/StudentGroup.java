@@ -183,6 +183,7 @@ public class StudentGroup implements StudentArrayOperation {
 		int dobd = dob.get(Calendar.DAY_OF_MONTH);
 		if(dobd>curd)
 			age--;
+		System.out.println(age);
 		return 0;
 	}
 
