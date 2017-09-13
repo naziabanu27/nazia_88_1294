@@ -169,21 +169,7 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public int getCurrentAgeByDate(int indexOfStudent) {
 		// Add your implementation here
-		Calendar dob = Calendar.getInstance();
-		dob=st.get(indexOfStudent.birthDate);
-		Calendar today = Calendar.getInstance();
-		int curyr = today.get(Calendar.YEAR);
-		int dobyr = dob.get(Calendar.YEAR);
-		static int age = curyr - dobyr;
-		int curm = today.get(Calendar.MONTH);
-		int dobm = dob.get(Calendar.MONTH);
-		if(dobm>curm)
-			age--;
-		int curd = today.get(Calendar.DAY_OF_MONTH);
-		int dobd = dob.get(Calendar.DAY_OF_MONTH);
-		if(dobd>curd)
-			age--;
-		System.out.println(age);
+		
 		return 0;
 	}
 
