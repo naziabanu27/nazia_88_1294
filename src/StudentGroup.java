@@ -106,9 +106,8 @@ public class StudentGroup implements StudentArrayOperation {
 	public void removeFromElement(Student student) {
 		// Add your implementation here
 		int in=st.indexOf(student);
-			{
-				removeFromIndex(in);
-			}
+		removeFromIndex(in);
+
 		}
 		
 	}
@@ -124,6 +123,9 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void removeToElement(Student student) {
 		// Add your implementation here
+		int aa=st.indexOf(student);
+		removeFromIndex(aa);
+
 	}
 
 	@Override
@@ -174,12 +176,27 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public Student[] getStudentsWithMaxAvgMark() {
 		// Add your implementation here
+		int max = Student.avgMark[0];
+		static int mi;
+		for(int i=0;i<l;i++)
+		{
+			if(Student.avgMark[i]>max)
+			{
+				max=Student.avgMark[i];
+				mi=i;
+			}
+		}
+	        System.out.println(st.get(mi));
 		return null;
 	}
 
 	@Override
 	public Student getNextStudent(Student student) {
 		// Add your implementation here
+		int bb=st.indexOf(student);
+		int ab=bb+1
+		System.out.println(st.get(ab));
+
 		return null;
 	}
 }
