@@ -1,5 +1,5 @@
-import java.util.Date;
-
+import java.util.*;
+import java.text.SimpleDateFormat;
 /**
  * A fix-sized array of students
  * array length should always be equal to the number of stored elements
@@ -29,6 +29,7 @@ public class StudentGroup implements StudentArrayOperation {
 		{
 			students[i]=s.next();
 		}
+		s.close();
 	}
 
 	@Override
@@ -136,10 +137,12 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public Student[] getByBirthDate(Date date) {
 		// Add your implementation here
-		for(Student a : st)
+		for(int j=0;j<l;j++)
 		{
-			if(a.birthDate == date)
-				System.out.println(id+" "+fullName+" "+birthDate+" "+avgMark);
+			if(Student.birthDate[j]==date)
+			{
+				System.out.println(st.get(j));
+			}
 		}
 		return null;
 	}
@@ -147,10 +150,12 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public Student[] getBetweenBirthDates(Date firstDate, Date lastDate) {
 		// Add your implementation here
-		for(Student a : st)
+		for(int j=0;j<l;j++)
 		{
-			if(a.birthDate > firstDate && a.birthDate)
-				System.out.println(id+" "+fullName+" "+birthDate+" "+avgMark);
+			if(Student.birthDate[j] < firstDate && Student.birthDate[j] > lastDate)
+			{
+				System.out.println(st.get(j));
+			}
 		}
 		return null;
 	}
@@ -164,12 +169,27 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public int getCurrentAgeByDate(int indexOfStudent) {
 		// Add your implementation here
+		Calendar dob = Calendar.getInstance();
+		dob=st.get(indexOfStudent.birthDate);
+		Calendar today = Calendar.getInstance();
+		int curyr = today.get(Calendar.YEAR);
+		int dobyr = dob.get(Calendar.YEAR);
+		static int age = curyr - dobyr;
+		int curm = today.get(Calendar.MONTH);
+		int dobm = dob.get(Calendar.MONTH);
+		if(dobm>curm)
+			age--;
+		int curd = today.get(Calendar.DAY_OF_MONTH);
+		int dobd = dob.get(Calendar.DAY_OF_MONTH);
+		if(dobd>curd)
+			age--;
 		return 0;
 	}
 
 	@Override
 	public Student[] getStudentsByAge(int age) {
 		// Add your implementation here
+		
 		return null;
 	}
 
