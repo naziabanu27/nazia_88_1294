@@ -19,13 +19,20 @@ public class StudentGroup implements StudentArrayOperation {
 	 * DO NOT remove or change this constructor, it will be used during task check
 	 * @param length
 	 */
+	ArrayList 
 	public StudentGroup(int length) {
 		this.students = new Student[length];
+		Scanner s= new Scanner(System.in);
+		for(int i=0;i<length;i++)
+		{
+			students[i]=s.next();
+		}
 	}
 
 	@Override
 	public Student[] getStudents() {
 		// Add your implementation here
+		
 		return null;
 	}
 
